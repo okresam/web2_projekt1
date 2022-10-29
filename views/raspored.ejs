@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <%- include('head'); %>
+<body>
+    <%- include('navbar'); %>
+    <div class='container'>
+        <button class="btn btn-primary mt-3 mb-3" type="button" onClick='window.location.href = "/tablica"'>Tablica</button>
+        <button class="btn btn-primary mt-3 mb-3" type="button" onClick='window.location.href = "/raspored"'>Raspored</button>
+        <% for(let i = 0; i < raspored.length; i++) { %>
+            <h3><%= i+1 %>. Kolo</h3>
+            <table class="table table-bordered table-hover">
+                  <tbody>
+                        <% for(let j = 0; j < raspored[i].length - 1; j++) { %>
+                            <tr>
+                                <td><%= raspored[i][j][0] %></td>
+                                <td><%= raspored[i][j][1] %></td>
+                                <td>
+                                    <% if (user && user.name == 'admin@mail.com') { %>
+                                        <input type='text' value='<%= raspored[i][j][2] %>'/>
+                                        <input type='text' value='<%= raspored[i][j][3] %>'/>
+                                        <button class="btn btn-primary" type="button">Promjeni</button>
+                                    <% } else { %>
+                                        <%= raspored[i][j][2] %> : <%= raspored[i][j][3] %>
+                                    <% } %>
+                                </td>
+                            </tr>
+                        <% } %> 
+                  </tbody>
+            </table>
+            <p>Komentar:</p>
+            <input type='text' />
+        <% } %>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+</script>

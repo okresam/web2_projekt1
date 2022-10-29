@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <h3 class="navbar-brand">Međimurska Premier liga 2022/2023</h3> 
+        <% if (authenticated) { %>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <h3>Korisnik: <%= user.name %> </h3>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-success" type="button" onClick='window.location.href = "/logout"'>Odjava</button>
+                </li>
+            </ul>
+        <% } else { %>
+            <button class="btn btn-outline-success" type="button" onClick='window.location.href = "/login"'>Prijava</button>
+        <% } %>
+    </div>
+</nav>
