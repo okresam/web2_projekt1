@@ -1,37 +1,88 @@
 <!DOCTYPE html>
-<html>
-    <%- include('head'); %>
+<html style="scroll-behavior: auto">
+<%- include('head'); %>
+
 <body>
     <%- include('navbar'); %>
     <div class='container'>
-        <button class="btn btn-primary mt-3 mb-3" type="button" onClick='window.location.href = "/tablica"'>Tablica</button>
-        <button class="btn btn-primary mt-3 mb-3" type="button" onClick='window.location.href = "/raspored"'>Raspored</button>
+        <button class="btn btn-primary mt-3 mb-3" type="button"
+            onClick='window.location.href = "/tablica"'>Tablica</button>
+        <button class="btn btn-primary mt-3 mb-3" type="button"
+            onClick='window.location.href = "/raspored"'>Raspored</button>
         <% for(let i = 0; i < raspored.length; i++) { %>
-            <h3><%= i+1 %>. Kolo</h3>
-            <table class="table table-bordered table-hover">
-                  <tbody>
-                        <% for(let j = 0; j < raspored[i].length - 1; j++) { %>
-                            <tr>
-                                <td><%= raspored[i][j][0] %></td>
-                                <td><%= raspored[i][j][1] %></td>
-                                <td>
-                                    <% if (user && user.name == 'admin@mail.com') { %>
-                                        <input type='text' value='<%= raspored[i][j][2] %>'/>
-                                        <input type='text' value='<%= raspored[i][j][3] %>'/>
-                                        <button class="btn btn-primary" type="button">Promjeni</button>
-                                    <% } else { %>
-                                        <%= raspored[i][j][2] %> : <%= raspored[i][j][3] %>
-                                    <% } %>
-                                </td>
-                            </tr>
-                        <% } %> 
-                  </tbody>
-            </table>
-            <p>Komentar:</p>
-            <input type='text' />
+        <h3 id="<%= i+1 %>kolo" class="bg-secondary"><%= i+1 %>. Kolo</h3>
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <% for(let j = 0; j < raspored[i].length - 1; j++) { %>
+                <tr>
+                    <td><%= raspored[i][j][0] %></td>
+                    <td><%= raspored[i][j][1] %></td>
+                    <td>
+                        <% if (user && user.name == 'admin@mail.com') { %>
+                        <form action='/raspored' method="POST">
+                            <input name="team1" type='text' value='<%= raspored[i][j][2] %>' />
+                            <input name="team2" type='text' value='<%= raspored[i][j][3] %>' />
+                            <input name="i" type='text' value='<%= i %>' hidden />
+                            <input name="j" type='text' value='<%= j %>' hidden />
+                            <input type="submit" class="btn btn-primary" value="Promjeni">
+                        </form>
+                        
+                        <!-- <button class="btn btn-primary" type="button"
+                            onClick='changeResult(<%= i %>, <%= j %>, document.getElementById("<%= raspored[i][j] + 1 %>").value, document.getElementById("<%= raspored[i][j] + 2 %>").value)'>Promjeni</button>
+                        -->
+                        <% } else { %>
+                        <%= raspored[i][j][2] %> : <%= raspored[i][j][3] %>
+                        <% } %>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <div class="container mb-3">
+            <h3>Komentari:</h3>
+            <% for(let j = 0; j < komentari[i].length - 1; j++) { %>
+                <div class="container p-1" style="background-color: lightgrey; border-style: solid; border-width: 1px">
+                    <h6>
+                        <%= komentari[i][j][1] %> - <%= komentari[i][j][0] %> :
+                    </h6>
+                    <% if (user && user.name == komentari[i][j][0]) { %>
+                        <form action='/editcomment' method="POST">
+                            <input type="text" name="komentar" value="<%= komentari[i][j][2] %>"/>
+                            <input type="text" name="i" value="<%= i %>" hidden/>
+                            <input type="text" name="j" value="<%= j %>" hidden/>
+                            <input type="text" name="commentuser" value="<%= komentari[i][j][0] %>" hidden/>
+                            <input type="submit" class="btn btn-primary" value="Uredi komentar">
+                        </form>
+                    <% } else { %>
+                        <p>
+                            <%= komentari[i][j][2] %>
+                        </p>
+                    <% } %>
+                    <% if (user && (komentari[i][j][0] == user.name || user.name == 'admin@mail.com')) { %>
+                    <form action='/deletecomment' method="POST">
+                        <input type="text" name="i" value="<%= i %>" hidden/>
+                        <input type="text" name="j" value="<%= j %>" hidden/>
+                        <input type="text" name="commentuser" value="<%= komentari[i][j][0] %>" hidden/>
+                        <input type="submit" class="btn btn-danger" value="Obriši komentar">
+                    </form>
+                    <% } %>
+                </div>
+            <% } %>
+            <div class="row m-1">
+                <div class="col">
+                    <form action='/addcomment' method="POST">
+                        <input type='text' name="komentar" />
+                        <input type='text' name="i" value="<%= i %>" hidden />
+                        <input type="submit" class="btn btn-primary" value="Dodaj komentar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        </br>
         <% } %>
     </div>
 </body>
+
 </html>
 
 <script type="text/javascript">

@@ -1,0 +1,62 @@
+01.10.2022. 16:00,Draškovec – Dinamo Palovec,1,1
+01.10.2022. 16:00,Centrometal – Mladost Komet,2,1
+01.10.2022. 16:00,Nedelišće – Naprijed (C),0,0
+02.10.2022. 16:00,Jedinstvo (GM) – Sloga Štrigova,3,2
+02.10.2022. 16:00,Galeb (O) – Bratstvo (SV),1,2
+02.10.2022. 16:00,Međimurec (DP) – Graničar Kotoriba,3,7
+02.10.2022. 16:00,BSK Belica – Podturen,1,0
+02.10.2022. 16:00,Mladost Sveta Marija – Bratstvo (Ju),0,1
+;
+08.10.2022. 15:30,Podturen – Nedelišće,1,1
+08.10.2022. 15:30,Mladost Komet – BSK Belica,0,0
+08.10.2022. 15:30,Graničar Kotoriba – Centrometal,3,0
+08.10.2022. 15:30,Bratstvo (SV) – Međimurec (DP),2,1
+08.10.2022. 15:30,Dinamo Palovec – Jedinstvo (GM),0,3
+09.10.2022. 15:30,Bratstvo (Ju) – Draškovec,2,4
+09.10.2022. 15:30,Naprijed (C) – Mladost Sveta Marija,2,0
+09.10.2022. 15:30,Sloga Štrigova – Galeb (O),1,1
+;
+15.10.2022. 15:30,Draškovec – Jedinstvo (GM),1,1
+15.10.2022. 15:30,Centrometal – Bratstvo (SV),0,2
+15.10.2022. 15:30,Nedelišće – Mladost Komet,1,1
+16.10.2022. 15:30,Galeb (O) – Dinamo Palovec,0,2
+16.10.2022. 15:30,Međimurec (DP) – Sloga Štrigova,4,0
+16.10.2022. 15:30,BSK Belica – Graničar Kotoriba,2,0
+16.10.2022. 15:30,Mladost Sveta Marija – Podturen,1,2
+16.10.2022. 15:30,Bratstvo (Ju) – Naprijed (C),2,0
+;
+22.10.2022. 15:00,Podturen – Bratstvo (Ju),4,0
+22.10.2022. 15:00,Mladost Komet – Mladost Sveta Marija,0,5
+22.10.2022. 15:00,Graničar Kotoriba – Nedelišće,4,1
+22.10.2022. 15:00,Bratstvo (SV) – BSK Belica,4,3
+22.10.2022. 15:00,Dinamo Palovec – Međimurec (DP),1,6
+23.10.2022. 15:00,Naprijed (C) – Draškovec,1,0
+23.10.2022. 15:00,Sloga Štrigova – Centrometal,2,2
+23.10.2022. 15:00,Jedinstvo (GM) – Galeb (O),2,1
+;
+29.10.2022. 15:00,Draškovec – Galeb (O),3,0
+29.10.2022. 15:00,Centrometal – Dinamo Palovec,3,0
+29.10.2022. 15:00,Nedelišće – Bratstvo (SV),1,1
+30.10.2022. 14:00,Međimurec (DP) – Jedinstvo (GM),-,-
+30.10.2022. 14:00,BSK Belica – Sloga Štrigova,-,-
+30.10.2022. 14:00,Mladost Sveta Marija – Graničar Kotoriba,-,-
+30.10.2022. 14:00,Bratstvo (Ju) – Mladost Komet,-,-
+30.10.2022. 14:00,Naprijed (C) – Podturen,-,-
+;
+05.11.2022. 14:00,Podturen – Draškovec,-,-
+05.11.2022. 14:00,Mladost Komet – Naprijed (C),-,-
+05.11.2022. 14:00,Graničar Kotoriba – Bratstvo (Ju),-,-
+05.11.2022. 14:00,Bratstvo (SV) – Mladost Sveta Marija,-,-
+05.11.2022. 14:00,Dinamo Palovec – BSK Belica,-,-
+06.11.2022. 14:00,Sloga Štrigova – Nedelišće,-,-
+06.11.2022. 14:00,Jedinstvo (GM) – Centrometal,-,-
+06.11.2022. 14:00,Galeb (O) – Međimurec (DP),-,-
+;
+12.11.2022. 13:30,Draškovec – Međimurec (DP),-,-
+12.11.2022. 13:30,Centrometal – Galeb (O),-,-
+12.11.2022. 13:30,Nedelišće – Dinamo Palovec,-,-
+12.11.2022. 13:30,Podturen – Mladost Komet,-,-
+13.11.2022. 13:30,BSK Belica – Jedinstvo (GM),-,-
+13.11.2022. 13:30,Mladost Sveta Marija – Sloga Štrigova,-,-
+13.11.2022. 13:30,Bratstvo (Ju) – Bratstvo (SV),-,-
+13.11.2022. 13:30,Naprijed (C) – Graničar Kotoriba,-,-
