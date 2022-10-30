@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/tablica", (req, res) => {
-  const data = fs.readFileSync('rezultati.txt', 'utf-8').replaceAll("\r", "").split('\n')
+  const data = fs.readFileSync('rezultati.txt', 'utf-8').replace("/\r/g", "").split('\n')
   let rezultati = []
   for (let item of data) {
     rezultati.push(item.split(','))
@@ -43,7 +43,7 @@ app.get("/tablica", (req, res) => {
 });
 
 app.get("/raspored", (req, res) => {
-  const data = fs.readFileSync('raspored.txt', 'utf-8').replaceAll("\r", "").split(';\n')
+  const data = fs.readFileSync('raspored.txt', 'utf-8').replace("/\r/g", "").split(';\n')
   let raspored = []
   for (let item of data) {
     let kolo = item.split('\n')
@@ -54,7 +54,7 @@ app.get("/raspored", (req, res) => {
     raspored.push(koloParsed)
   }
 
-  const commentData = fs.readFileSync('komentari.txt', 'utf-8').replaceAll("\r", "").split(';\n')
+  const commentData = fs.readFileSync('komentari.txt', 'utf-8').replace("/\r/g", "").split(';\n')
   let komentari = []
   for (let item of commentData) {
     let koloKomentari = item.split('\n')
@@ -73,7 +73,7 @@ app.post("/raspored", requiresAuth(), (req, res) => {
     res.redirect('/raspored')
   }
 
-  const data = fs.readFileSync('raspored.txt', 'utf-8').replaceAll("\r", "").split(';\n')
+  const data = fs.readFileSync('raspored.txt', 'utf-8').replace("/\r/g", "").split(';\n')
   let raspored = []
   for (let item of data) {
     let kolo = item.split('\n')
@@ -103,7 +103,7 @@ app.post("/raspored", requiresAuth(), (req, res) => {
 });
 
 app.post("/addcomment", requiresAuth(), (req, res) => {
-  const commentData = fs.readFileSync('komentari.txt', 'utf-8').replaceAll("\r", "").split(';\n')
+  const commentData = fs.readFileSync('komentari.txt', 'utf-8').replace("/\r/g", "").split(';\n')
   let komentari = []
   for (let item of commentData) {
     let koloKomentari = item.split('\n')
@@ -142,7 +142,7 @@ app.post("/deletecomment", requiresAuth(), (req, res) => {
     res.redirect("/raspored#" + (Number(req.body.i) + 1) + "kolo")
   }
 
-  const commentData = fs.readFileSync('komentari.txt', 'utf-8').replaceAll("\r", "").split(';\n')
+  const commentData = fs.readFileSync('komentari.txt', 'utf-8').replace("/\r/g", "").split(';\n')
   let komentari = []
   for (let item of commentData) {
     let koloKomentari = item.split('\n')
@@ -175,7 +175,7 @@ app.post("/editcomment", requiresAuth(), (req, res) => {
     res.redirect("/raspored#" + (Number(req.body.i) + 1) + "kolo")
   }
 
-  const commentData = fs.readFileSync('komentari.txt', 'utf-8').replaceAll("\r", "").split(';\n')
+  const commentData = fs.readFileSync('komentari.txt', 'utf-8').replace("/\r/g", "").split(';\n')
   let komentari = []
   for (let item of commentData) {
     let koloKomentari = item.split('\n')
